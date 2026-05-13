@@ -235,25 +235,3 @@ export const {
   },
 }))
 
-export async function register(username: string, password: string) {
-  const db = createDb()
-
-  const existing = await db.query.users.findFirst({
-    where: eq(users.username, username)
-  })
-
-  if (existing) {
-    throw new Error("用户名已存在")
-  }
-
-  const hashedPassword = await hashPassword(password)
-
-  const [user] = await db.insert(users)
-    .values({
-      username,
-      password: hashedPassword,
-    })
-    .returning()
-
-  return user
-}

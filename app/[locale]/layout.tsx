@@ -46,7 +46,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "metadata" })
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://moemail.app"
-  
+
   // Generate hreflang links for all supported locales
   const languages: Record<string, string> = {}
   i18n.locales.forEach((loc) => {
@@ -74,7 +74,7 @@ export async function generateMetadata({
       url: `${baseUrl}/${locale}`,
       title: t("title"),
       description: t("description"),
-      siteName: "MoeMail",
+      siteName: "MeowMail",
     },
     twitter: {
       card: "summary_large_image",
@@ -110,14 +110,14 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <meta name="application-name" content="MoeMail" />
+        <meta name="application-name" content="MeowMail" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="MoeMail" />
+        <meta name="apple-mobile-web-app-title" content="MeowMail" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
-      <body 
+      <body
         className={cn(
           zpix.variable,
           "font-zpix min-h-screen antialiased",

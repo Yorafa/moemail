@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "MoeMail"
+    "name": "MeowMail"
   },
   "actions": {
     "ok": "OK",
@@ -17,4 +17,3 @@
   },
   "github": "ソースコードを入手"
 }
-
